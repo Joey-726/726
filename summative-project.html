@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical English – Summative Project Submission</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background: #faf7ef;
+            margin: 0;
+            padding: 0;
+            color: #1f2937;
+        }
+        .container {
+            max-width: 540px;
+            margin: 2.5rem auto;
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            padding: 2.5rem 2rem 2rem 2rem;
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1.2rem;
+            color: #1f2937;
+            font-weight: 600;
+        }
+        .section-title {
+            font-size: 1.15rem;
+            margin-top: 2rem;
+            margin-bottom: 0.7rem;
+            color: #2563eb;
+            font-weight: 600;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.3rem;
+            font-weight: 500;
+        }
+        input[type="text"], input[type="email"], select, textarea {
+            width: 100%;
+            padding: 0.6rem 0.9rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 7px;
+            font-size: 1rem;
+            margin-bottom: 1.1rem;
+            background: #f9fafb;
+            box-sizing: border-box;
+        }
+        textarea {
+            min-height: 70px;
+            resize: vertical;
+        }
+        input[type="file"] {
+            margin-bottom: 1.1rem;
+        }
+        .radio-group {
+            margin-bottom: 1.1rem;
+        }
+        .radio-group label {
+            display: inline-block;
+            margin-right: 1.5rem;
+            font-weight: 400;
+        }
+        .submit-btn {
+            background: #2563eb;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 0.7rem 1.5rem;
+            font-size: 1.1rem;
+            cursor: pointer;
+            margin-top: 0.5rem;
+            transition: background 0.2s;
+        }
+        .submit-btn:hover {
+            background: #1e40af;
+        }
+        .back-btn {
+            display: inline-block;
+            margin-top: 2rem;
+            background: #e5e7eb;
+            color: #1f2937;
+            border: none;
+            border-radius: 6px;
+            padding: 0.5rem 1.2rem;
+            font-size: 1rem;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .back-btn:hover {
+            background: #cbd5e1;
+        }
+        .success-message {
+            background: #d1fae5;
+            color: #065f46;
+            border-radius: 7px;
+            padding: 1rem;
+            margin-bottom: 1.2rem;
+            text-align: center;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Medical English – Summative Project Submission</h1>
+        <form id="summativeForm" enctype="multipart/form-data" autocomplete="off">
+            <div class="section-title">Section 1: Learner Info</div>
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+            <label>Select your completed module:</label>
+            <div class="radio-group">
+                <label><input type="radio" name="module" value="Module 1: Medical System Overview" required> Module 1: Medical System Overview</label>
+                <label><input type="radio" name="module" value="Module 2: Medical Ethics"> Module 2: Medical Ethics</label>
+                <label><input type="radio" name="module" value="Module 3: Epidemic Control"> Module 3: Epidemic Control</label>
+                <label><input type="radio" name="module" value="Module 4: Healthy Lifestyle"> Module 4: Healthy Lifestyle</label>
+            </div>
+            <div class="section-title">Section 2: Upload Task</div>
+            <label for="projectFile">Upload your final project (Word, PDF, Google Docs)</label>
+            <input type="file" id="projectFile" name="projectFile" accept=".doc,.docx,.pdf,.gdoc,.odt,.rtf,.txt,.pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/pdf" required>
+            <div class="section-title">Section 3: Self-Evaluation</div>
+            <label for="aiUse">How did you use AI tools in this project?</label>
+            <textarea id="aiUse" name="aiUse" required></textarea>
+            <label for="learned">What did you learn through this project?</label>
+            <textarea id="learned" name="learned" required></textarea>
+            <label for="improve">If you had more time, what would you improve?</label>
+            <textarea id="improve" name="improve" required></textarea>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+        <div class="success-message" id="successMsg">Thank you! Your project has been submitted (demo only, not actually uploaded).</div>
+        <a href="free-ai-version.html" class="back-btn">← Back to Home</a>
+    </div>
+    <script>
+        document.getElementById('summativeForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('successMsg').style.display = 'block';
+            this.reset();
+            setTimeout(()=>{
+                document.getElementById('successMsg').style.display = 'none';
+            }, 4000);
+        });
+    </script>
+</body>
+</html> 
